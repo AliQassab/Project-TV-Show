@@ -21,16 +21,27 @@ export const searchEpisode = (allEpisodes) => {
   searchInput.addEventListener("input", (e) => {
     const searchTerm = e.target.value.toLowerCase();
 
-    const filteredEpisodes = allEpisodes.filter((episode) => {
-      return (
-        episode.name.toLowerCase().includes(searchTerm) ||
-        episode.summary.toLowerCase().includes(searchTerm)
-      );
-    });
+    let filteredEpisodes;
 
+    if (searchTerm === "") {
+      filteredEpisodes = allEpisodes;
+      resultCount.textContent = "";
+    } else {
+      filteredEpisodes = allEpisodes.filter((episode) => {
+        return (
+          episode.name.toLowerCase().includes(searchTerm) ||
+          episode.summary.toLowerCase().includes(searchTerm)
+        );
+      });
+
+      // Update the result count with the number of matched episodes
+      resultCount.textContent = `${filteredEpisodes.length} episode(s) match your search.`;
+    }
+
+    // Clear the episodes container
     episodesContainer.innerHTML = "";
-    makePageForEpisodes(filteredEpisodes);
 
-    resultCount.textContent = `${filteredEpisodes.length} episode(s) match your search.`;
+    // Render the filtered (or full) episodes
+    makePageForEpisodes(filteredEpisodes);
   });
 };
