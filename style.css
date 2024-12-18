@@ -21,13 +21,29 @@ header a {
   text-decoration: none;
 }
 
-#root {
+/* #root {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
+} */
+#root {
+  /* display: grid;
+  gap: 20px; */
+  padding: 20px;
 }
 
+/* Episode card inherits root's grid layout */
+.episodes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  /* padding: 20px; */
+}
+.search-results {
+  display: flex;
+  margin-bottom: 20px;
+}
 .episode {
   /* position: relative; */
   background-color: white;
@@ -42,7 +58,18 @@ header a {
   height: 200px;
   object-fit: cover;
 }
-
+.search-input {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+#search-input {
+  display: inline-block;
+  width: 300px;
+  /* background-color: #0073e6; */
+  padding: 8px;
+  margin-right: 20px;
+}
 /* .episode-content {
   padding: 15px;
 } */
