@@ -34,14 +34,11 @@ export const searchEpisode = (allEpisodes) => {
         );
       });
 
-      // Update the result count with the number of matched episodes
       resultCount.textContent = `${filteredEpisodes.length} episode(s) match your search.`;
     }
 
-    // Clear the episodes container
     episodesContainer.innerHTML = "";
 
-    // Render the filtered (or full) episodes
     makePageForEpisodes(filteredEpisodes);
   });
 };
