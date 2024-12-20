@@ -1,6 +1,11 @@
 export const makePageForEpisodes = (episodeList) => {
-  const episodesContainer = document.querySelector(".episodes-container");
-
+  let episodesContainer = document.querySelector(".episodes-container");
+  if (!episodeList) {
+    episodesContainer.innerHTML =
+      "<p>Failed to load episodes. Please try again later.</p>";
+    return;
+  }
+  // episodesContainer.innerHTML = "";
   episodeList.forEach((episode) => {
     const { name, season, number, image, summary } = episode;
 
