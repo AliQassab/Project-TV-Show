@@ -10,6 +10,7 @@ header {
   color: white;
   text-align: center;
   padding: 20px;
+  /* margin-bottom: 20px; */
 }
 
 header h1 {
@@ -21,35 +22,29 @@ header a {
   text-decoration: none;
 }
 
-/* #root {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
-} */
 #root {
-  /* display: grid;
-  gap: 20px; */
   padding: 20px;
 }
-
+#search-bar {
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /* Episode card inherits root's grid layout */
 .episodes-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  /* padding: 20px; */
 }
 .search-results {
   display: flex;
-  margin-bottom: 20px;
 }
 .episode {
-  /* position: relative; */
   background-color: white;
-  /* border: 1px solid #ddd; */
+
   border-radius: 5px;
-  /* overflow: hidden; */
+
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -60,7 +55,7 @@ header a {
 }
 .search-input {
   display: flex;
-  /* justify-content: center; */
+
   align-items: center;
 }
 #search-input {
@@ -70,9 +65,6 @@ header a {
   padding: 8px;
   margin-right: 20px;
 }
-/* .episode-content {
-  padding: 15px;
-} */
 
 .episode-header {
   display: flex;
