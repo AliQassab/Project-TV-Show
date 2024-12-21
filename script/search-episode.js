@@ -1,4 +1,4 @@
-import { makePageForEpisodes } from "./episodes-page.js";
+import { render } from "./renderEpisodes.js";
 
 export const searchEpisode = (allEpisodes) => {
   const episodesContainer = document.querySelector(".episodes-container");
@@ -39,6 +39,6 @@ export const searchEpisode = (allEpisodes) => {
 
     episodesContainer.innerHTML = "";
 
-    makePageForEpisodes(filteredEpisodes);
+    render(filteredEpisodes);
   });
 };
