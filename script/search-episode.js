@@ -1,4 +1,5 @@
-import {render } from "./render-episode.js";
+import { renderEpisodes } from "./render.js";
+import { fetchEpisodes } from "./api.js";
 
 export const searchEpisode = (allEpisodes) => {
   const episodesContainer = document.querySelector(".episodes-container");
@@ -18,7 +19,7 @@ export const searchEpisode = (allEpisodes) => {
   const searchInput = document.getElementById("search-input");
   const resultCount = document.getElementById("result-count");
 
-  searchInput.addEventListener("input", (e) => {
+  searchInput.addEventListener("input", async (e) => {
     const searchTerm = e.target.value.toLowerCase();
 
     let filteredEpisodes;
@@ -39,6 +40,16 @@ export const searchEpisode = (allEpisodes) => {
 
     episodesContainer.innerHTML = "";
 
-   render(filteredEpisodes);
+    renderEpisodes(filteredEpisodes);
+  });
+};
+
+export const selectedShow = () => {
+  const showSelector = document.getElementById("show-selector");
+  showSelector.addEventListener("change", async (e) => {
+    const selectedShowId = e.target.value;
+    const newEpisodes = await fetchEpisodes(selectedShowId);
+    renderEpisodes(newEpisodes);
+    searchEpisode(newEpisodes);
   });
 };

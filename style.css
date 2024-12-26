@@ -3,6 +3,23 @@ body {
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
 }
 
 header {
@@ -28,7 +45,8 @@ header a {
 #search-bar {
   padding: 15px 0;
   display: flex;
-  justify-content: space-between;
+
+
   align-items: center;
 }
 /* Episode card inherits root's grid layout */
@@ -39,6 +57,9 @@ header a {
 }
 .search-results {
   display: flex;
+
+  align-items: center;
+
 }
 .episode {
   background-color: white;
@@ -53,17 +74,20 @@ header a {
   height: 200px;
   object-fit: cover;
 }
-.search-input {
-  display: flex;
 
-  align-items: center;
+#result-count {
+  margin: 0;
 }
 #search-input {
-  display: inline-block;
-  width: 300px;
-  /* background-color: #0073e6; */
+  min-width: 300px;
+  box-sizing: border-box;
   padding: 8px;
   margin-right: 20px;
+  margin-left: 20px;
+}
+#show-selector {
+  min-width: 300px;
+  padding: 8px;
 }
 
 .episode-header {
@@ -73,12 +97,8 @@ header a {
   /* background-color: rgba(0, 0, 0, 0.6); 
   color: white; */
   padding: 10px;
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1; */
+
+
   border: 1px solid;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -106,3 +126,14 @@ header a {
 a {
   color: #0073e6;
 }
+
+@media (max-width: 768px) {
+  #search-bar {
+    display: block;
+  }
+  #search-input {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
+
