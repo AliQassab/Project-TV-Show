@@ -37,6 +37,10 @@ export const htmlElements = (shows) => {
   const section2 = document.createElement("section");
   main.appendChild(section2);
 
+  const showsContainer = document.createElement("div");
+  showsContainer.id = "shows-container";
+  section2.appendChild(showsContainer);
+
   const episodesContainer = document.createElement("div");
   episodesContainer.className = "episodes-container";
   section2.appendChild(episodesContainer);

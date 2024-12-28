@@ -1,4 +1,7 @@
+const cache = new Map() 
+
 export const fetchEpisodes = async (showId) => {
+  if (cache.has(showId)) return cache.get(showId) // will stop for refetching the episodes
 
     const apiUrl = `https://api.tvmaze.com/shows/${showId}/episodes`;
     try {
@@ -16,17 +19,19 @@ export const fetchEpisodes = async (showId) => {
   };
 
 export const fetchShows = async () => {
-   
+
+  if (cache.has("shows")) return cache.get("shows") // will stop for refetching the shows
+
     const apiUrl = `https://api.tvmaze.com/shows`;
     try {
       const res = await fetch(apiUrl);
       if (!res.ok) {
         throw new Error(`Failed to fetch data: ${res.status}`);
       }
-        const data = await res.json();
-       console.log(data, "shows")
-       console.log("first")
-        return data.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
+        const shows = await res.json();
+      
+      
+        return shows.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
     } catch (error) {
       console.error("Error fetching shows:", error);
     }
