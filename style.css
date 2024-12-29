@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 header {
@@ -20,6 +21,7 @@ header h1 {
 header a {
   color: #fff;
   text-decoration: none;
+
 }
 
 header {
@@ -27,7 +29,6 @@ header {
   color: white;
   text-align: center;
   padding: 20px;
-  /* margin-bottom: 20px; */
 }
 
 header h1 {
@@ -46,7 +47,6 @@ header a {
   padding: 15px 0;
   display: flex;
 
-
   align-items: center;
 }
 /* Episode card inherits root's grid layout */
@@ -57,6 +57,7 @@ header a {
 }
 .search-results {
   display: flex;
+
 
   align-items: center;
 
@@ -89,15 +90,11 @@ header a {
   min-width: 300px;
   padding: 8px;
 }
-
 .episode-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: rgba(0, 0, 0, 0.6); 
-  color: white; */
   padding: 10px;
-
 
   border: 1px solid;
   margin-bottom: 10px;

@@ -1,7 +1,5 @@
 export const htmlElements = (shows) => {
   const rootElem = document.getElementById("root");
-
-
   // Create header
   const header = document.createElement("header");
   header.className = "header";
@@ -36,6 +34,7 @@ export const htmlElements = (shows) => {
   // Section 2: Episodes container
   const section2 = document.createElement("section");
   main.appendChild(section2);
+
 
   const showsContainer = document.createElement("div");
   showsContainer.id = "shows-container";
