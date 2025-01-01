@@ -14,17 +14,9 @@ export const htmlElements = (shows) => {
   main.appendChild(section1);
 
   // Create and append the dropdown inside section1
-  // Create the label element
-  const label = document.createElement("label");
-  label.htmlFor = "show-selector"; // Associate the label with the select element
-  label.textContent = "Choose a show:"; // Add descriptive text
-
-  // Create the select element
   const showSelector = document.createElement("select");
   showSelector.id = "show-selector";
-
-  // Append the label and select to the section
-  section1.appendChild(label);
+  showSelector.setAttribute("aria-label", "Choose a show");
   section1.appendChild(showSelector);
 
   const defaultOption = document.createElement("option");
