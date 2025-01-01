@@ -1,3 +1,6 @@
+import { fetchEpisodes, fetchShows } from "./api.js";
+import { searchContent } from "./eventListener.js";
+
 export function renderEpisodes(episodeList) {
   let episodesContainer = document.querySelector(".episodes-container");
   episodesContainer.innerHTML = "";
@@ -31,3 +34,44 @@ export function renderEpisodes(episodeList) {
     episodesContainer.insertAdjacentHTML("beforeend", markup);
   });
 }
+export const renderShows = (shows) => {
+  const showsContainer = document.getElementById("shows-container");
+  showsContainer.innerHTML = ""; // Clear previous content
+
+  shows.forEach((show) => {
+    const showCard = document.createElement("div");
+    showCard.className = "show-card";
+
+    showCard.innerHTML = `
+      <h2 class="show-title">${show.name}</h2>
+      <div class="show-content">
+      <img src="${show.image?.medium || "placeholder.jpg"}" alt="${show.name}">
+      <div class="summary">${show.summary}</div>
+      <div class="show-rate">
+      <p><strong>Genres:</strong> ${show.genres.join(", ")}</p>
+      <p><strong>Status:</strong> ${show.status}</p>
+      <p><strong>Rating:</strong> ${show.rating.average || "N/A"}</p>
+      <p><strong>Runtime:</strong> ${show.runtime} minutes</p>
+      </div>
+      </div>
+    `;
+
+    // Add click event to fetch episodes for the show
+    showCard.addEventListener("click", () => {
+      loadEpisodesForShow(show.id);
+    });
+    showsContainer.appendChild(showCard);
+  });
+};
+
+const loadEpisodesForShow = async (showId) => {
+  const allEpisodes = await fetchEpisodes(showId);
+
+  searchContent(allEpisodes, renderEpisodes, "Search episodes...");
+  renderEpisodes(allEpisodes);
+
+  document.getElementById("shows-container").style.display = "none";
+  document.querySelector(".episodes-container").style.display = "grid";
+  document.getElementById("back-to-shows-button").style.display = "block";
+  document.getElementById("show-selector").style.display = "none";
+};

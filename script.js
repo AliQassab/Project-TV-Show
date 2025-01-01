@@ -1,20 +1,30 @@
 import { htmlElements } from "./script/htmlElements.js";
-
-import { fetchShows, fetchEpisodes } from "./script/api.js";
-import { renderEpisodes } from "./script/render.js";
-import { searchEpisode, selectedShow } from "./script/search-episode.js";
+import { addBackToShowsLink } from "./script/eventListener.js";
+import { fetchShows } from "./script/api.js";
+import { renderShows } from "./script/render.js";
+import { selectedShow, searchContent } from "./script/eventListener.js";
 
 async function setup() {
-  // Fetch and render shows
-  const allShows = await fetchShows();
-  htmlElements(allShows);
+  try {
+    // Fetch shows
+    const allShows = await fetchShows();
 
-  // Fetch and render episodes for the default show
-  const defaultShowId = allShows[0].id;
-  const allEpisodes = await fetchEpisodes(defaultShowId);
-  renderEpisodes(allEpisodes);
-  searchEpisode(allEpisodes);
-  selectedShow();
+    // Ensure shows are successfully fetched
+    if (!allShows || allShows.length === 0) {
+      console.error("No shows found!");
+      return;
+    }
+
+    htmlElements(allShows);
+    searchContent(allShows, renderShows, "Search shows...");
+    renderShows(allShows);
+    selectedShow(allShows);
+    addBackToShowsLink(allShows, renderShows);
+  } catch (error) {
+    // Log error and show a user-friendly message
+    console.error("Error setting up the app:", error);
+    alert("Failed to load shows. Please try again later.");
+  }
 }
 
 window.onload = setup;
