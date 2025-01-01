@@ -4,6 +4,24 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+
 }
 
 header {
@@ -28,6 +46,7 @@ header a {
 #search-bar {
   padding: 15px 0;
   display: flex;
+
   align-items: center;
 }
 /* Episode card inherits root's grid layout */
@@ -38,7 +57,10 @@ header a {
 }
 .search-results {
   display: flex;
+
+
   align-items: center;
+
 }
 .episode {
   background-color: white;
@@ -53,6 +75,7 @@ header a {
   height: 200px;
   object-fit: cover;
 }
+
 #result-count {
   margin: 0;
 }
@@ -72,6 +95,7 @@ header a {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+
   border: 1px solid;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -99,6 +123,7 @@ header a {
 a {
   color: #0073e6;
 }
+
 #back-to-shows-button {
   cursor: pointer;
   display: none;
@@ -197,6 +222,7 @@ a {
   }
 }
 
+
 @media (max-width: 768px) {
   #search-bar {
     display: block;
@@ -206,3 +232,4 @@ a {
     margin-left: 0;
   }
 }
+
