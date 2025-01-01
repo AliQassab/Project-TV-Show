@@ -4,7 +4,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 header {
@@ -21,7 +20,6 @@ header h1 {
 header a {
   color: #fff;
   text-decoration: none;
-
 }
 
 header {
@@ -58,9 +56,7 @@ header a {
 .search-results {
   display: flex;
 
-
   align-items: center;
-
 }
 .episode {
   background-color: white;
@@ -222,7 +218,6 @@ a {
   }
 }
 
-
 @media (max-width: 768px) {
   #search-bar {
     display: block;
@@ -232,4 +227,3 @@ a {
     margin-left: 0;
   }
 }
-
