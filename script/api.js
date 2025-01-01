@@ -1,4 +1,3 @@
-
 const cache = new Map();
 export const fetchEpisodes = async (showId) => {
   if (cache.has(showId)) return cache.get(showId);
@@ -9,7 +8,6 @@ export const fetchEpisodes = async (showId) => {
       throw new Error(`Failed to fetch episodes: ${res.status}`);
     }
     const episodes = await res.json();
-    console.log(episodes, "episodes ");
     return episodes;
   } catch (error) {
     console.error("Error fetching episodes:", error);
@@ -37,4 +35,3 @@ export const fetchShows = async () => {
     return [];
   }
 };
-

@@ -1,7 +1,5 @@
-
 import { fetchEpisodes, fetchShows } from "./api.js";
 import { searchContent } from "./eventListener.js";
-
 
 export function renderEpisodes(episodeList) {
   let episodesContainer = document.querySelector(".episodes-container");
@@ -17,8 +15,7 @@ export function renderEpisodes(episodeList) {
       .toString()
       .padStart(2, "0")}`;
 
-
-      const markup = `
+    const markup = `
       <div class="episode">
         <div class="episode-header">
           <h3 class="episode-title">${name}</h3>
@@ -33,49 +30,11 @@ export function renderEpisodes(episodeList) {
         </div>
       </div>
   `;
-  
-      episodesContainer.insertAdjacentHTML("beforeend", markup);
-    });
-  }
-
-  export const renderShows = (shows) => {
-    const showsContainer = document.getElementById("shows-container");
-    showsContainer.innerHTML = '';
-
-    shows.forEach((show) => {
-      const showCard = document.createElement("div");
-      showCard.className = "show-card";
-        showCard.innerHTML = `
-        <h2 class="Show-title">${show.name}</h2>
-        <div class="show-content">
-        <img src="${show.image?.medium || "placeholder.jpg"}" alt="${show.name}">
-        <div class="summary">${show.summary}</div>
-      <div class="show-rate">
-        <p><strong>Rating:</strong>${show.rating.average}</p>
-        <p><strong>Genres</strong>${show.genres}</p>
-        <p><strong>Status</strong>${show.status}</p>
-        <p><strong>Runtime</strong>${show.runtime}</p>
-    
-    </div>
-      `
-      showCard.addEventListener("click", () => {
-        loadEpisodesForShow(show.id)
-      })
-      showsContainer.appendChild(showCard)
-    })
-
-  }
-
-  const loadEpisodesForShow = async (showId) => {
-    const allEpisodes = await fetchEpisodes(showId);
-    renderEpisodes(allEpisodes);
-    document.querySelector(".episodes-container").style.display = "grid";
-    document.getElementById("shows-container").style.display = "none";
-  } 
 
     episodesContainer.insertAdjacentHTML("beforeend", markup);
   });
 }
+
 export const renderShows = (shows) => {
   const showsContainer = document.getElementById("shows-container");
   showsContainer.innerHTML = ""; // Clear previous content
@@ -117,4 +76,3 @@ const loadEpisodesForShow = async (showId) => {
   document.getElementById("back-to-shows-button").style.display = "block";
   document.getElementById("show-selector").style.display = "none";
 };
-
