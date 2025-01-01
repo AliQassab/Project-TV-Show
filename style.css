@@ -124,6 +124,105 @@ a {
   color: #0073e6;
 }
 
+#back-to-shows-button {
+  cursor: pointer;
+  display: none;
+}
+/* Container for each show card */
+.show-card {
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.show-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Layout for show content */
+.show-content {
+  display: flex;
+
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Show image styling */
+.show-content img {
+  border-radius: 8px;
+  max-width: 150px;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* Show summary styling */
+.summary {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+}
+.summary p {
+  margin: 0;
+}
+/* Styling for the rating and meta information */
+.show-rate {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+  padding: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.show-rate p {
+  margin: 0;
+}
+
+.show-rate strong {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Title styling */
+.show-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  /* text-align: center; */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .show-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .summary {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .show-content img {
+    max-width: 100%;
+  }
+  .show-title {
+    text-align: center;
+  }
+}
+
+
 @media (max-width: 768px) {
   #search-bar {
     display: block;
