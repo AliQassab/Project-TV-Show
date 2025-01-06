@@ -6,15 +6,9 @@ body {
   box-sizing: border-box;
 }
 
-header {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
 header h1 {
   margin: 0;
+  /* text-align: center; */
 }
 
 header a {
@@ -25,17 +19,12 @@ header a {
 header {
   background-color: #333;
   color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-header h1 {
-  margin: 0;
-}
-
-header a {
-  color: #fff;
-  text-decoration: none;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 #root {
@@ -80,11 +69,12 @@ header a {
   box-sizing: border-box;
   padding: 8px;
   margin-right: 20px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 #show-selector {
   min-width: 300px;
   padding: 8px;
+  margin-right: 20px;
 }
 .episode-header {
   display: flex;
@@ -96,7 +86,12 @@ header a {
   margin-bottom: 10px;
   border-radius: 5px;
 }
-
+.current-show-title {
+  margin: 0;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+}
 .episode-title {
   font-size: 18px;
   font-weight: bold;
@@ -121,9 +116,18 @@ a {
 }
 
 #back-to-shows-button {
-  cursor: pointer;
+  position: absolute;
   display: none;
+  left: 20px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
 }
+
+#back-to-shows-button:hover {
+  text-decoration: underline;
+}
+
 /* Container for each show card */
 .show-card {
   cursor: pointer;
