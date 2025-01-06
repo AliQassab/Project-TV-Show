@@ -1,3 +1,4 @@
+
 import { fetchEpisodes } from "./api.js";
 
 export function renderEpisodes(episodeList) {
@@ -13,6 +14,7 @@ export function renderEpisodes(episodeList) {
     const episodeCode = `S${season.toString().padStart(2, "0")}E${number
       .toString()
       .padStart(2, "0")}`;
+
 
       const markup = `
       <div class="episode">
@@ -79,3 +81,4 @@ export function renderEpisodes(episodeList) {
     // document.querySelector(".episodes-container").style.display = "grid";
     // document.getElementById("shows-container").style.display = "none";
   } 
+
