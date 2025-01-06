@@ -1,21 +1,13 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-header {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
 header h1 {
   margin: 0;
-  /* text-align: center; */
 }
 header a {
   color: #fff;
@@ -30,17 +22,6 @@ header {
   justify-content: center;
   align-items: center;
   position: relative;
-  text-align: center;
-  padding: 20px;
-}
-
-header h1 {
-  margin: 0;
-}
-
-header a {
-  color: #fff;
-  text-decoration: none;
 }
 #root {
   padding: 20px;
@@ -79,7 +60,6 @@ header a {
   box-sizing: border-box;
   padding: 8px;
   margin-right: 20px;
-  /* margin-left: 20px; */
 }
 #show-selector {
   min-width: 300px;
@@ -118,7 +98,7 @@ header a {
   padding: 15px;
 }
 a {
-  color: #0073E6;
+  color: #0073e6;
 }
 #back-to-shows-button {
   position: absolute;
@@ -127,10 +107,9 @@ a {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
+  display: none;
 }
-#back-to-shows-button:hover {
-  text-decoration: underline;
-}
+
 /* Container for each show card */
 .show-card {
   cursor: pointer;
@@ -214,7 +193,6 @@ a {
   }
 }
 
-
 @media (max-width: 768px) {
   #search-bar {
     display: block;
@@ -223,4 +201,4 @@ a {
     margin-top: 10px;
     margin-left: 0;
   }
-
+}

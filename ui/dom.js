@@ -3,6 +3,15 @@ export const htmlElements = (shows) => {
   // Create header
   const header = document.createElement("header");
   header.className = "header";
+
+  const backToShows = document.createElement("a");
+  backToShows.textContent = "Back to Shows";
+  backToShows.id = "back-to-shows-button";
+  header.appendChild(backToShows);
+  // Add a show title element
+  const showTitleElement = document.createElement("h1");
+  showTitleElement.className = "current-show-title";
+  header.appendChild(showTitleElement);
   rootElem.appendChild(header);
 
   // Create main
@@ -30,10 +39,7 @@ export const htmlElements = (shows) => {
     option.textContent = show.name;
     showSelector.appendChild(option);
   });
-  const backToShows = document.createElement("a");
-  backToShows.textContent = "Back to Shows";
-  backToShows.id = "back-to-shows-button";
-  section1.appendChild(backToShows);
+
   // Add search results div
   const searchResults = document.createElement("div");
   searchResults.className = "search-results";

@@ -1,6 +1,3 @@
-import { renderShows, renderEpisodes } from "./render.js";
-import { fetchShows, fetchEpisodes } from "./api.js";
-
 export const filterAndRender = (
   searchTerm,
   items,
