@@ -8,14 +8,11 @@ body {
 
 header h1 {
   margin: 0;
-  /* text-align: center; */
 }
-
 header a {
   color: #fff;
   text-decoration: none;
 }
-
 header {
   background-color: #333;
   color: white;
@@ -26,17 +23,15 @@ header {
   align-items: center;
   position: relative;
 }
-
 #root {
   padding: 20px;
 }
 #search-bar {
   padding: 15px 0;
   display: flex;
-
   align-items: center;
 }
-/* Episode card inherits root's grid layout */
+/* Episode card inherits root’s grid layout */
 .episodes-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -49,18 +44,14 @@ header {
 }
 .episode {
   background-color: white;
-
   border-radius: 5px;
-
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .episode img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-
 #result-count {
   margin: 0;
 }
@@ -69,7 +60,6 @@ header {
   box-sizing: border-box;
   padding: 8px;
   margin-right: 20px;
-  /* margin-left: 20px; */
 }
 #show-selector {
   min-width: 300px;
@@ -81,7 +71,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-
   border: 1px solid;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -97,12 +86,10 @@ header {
   font-weight: bold;
   margin: 0;
 }
-
 .episode-code {
   font-size: 14px;
   /* color: #fff; */
 }
-
 .episode-summary {
   /* margin-top: 220px; Push summary below the image */
   font-size: 14px;
@@ -110,11 +97,9 @@ header {
   color: #555;
   padding: 15px;
 }
-
 a {
   color: #0073e6;
 }
-
 #back-to-shows-button {
   position: absolute;
   display: none;
@@ -122,10 +107,7 @@ a {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
-}
-
-#back-to-shows-button:hover {
-  text-decoration: underline;
+  display: none;
 }
 
 /* Container for each show card */
@@ -138,21 +120,17 @@ a {
   background-color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .show-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
 /* Layout for show content */
 .show-content {
   display: flex;
-
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 20px;
 }
-
 /* Show image styling */
 .show-content img {
   border-radius: 8px;
@@ -161,7 +139,6 @@ a {
   flex-shrink: 0;
   object-fit: cover;
 }
-
 /* Show summary styling */
 .summary {
   flex: 1;
@@ -182,16 +159,13 @@ a {
   padding: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
 .show-rate p {
   margin: 0;
 }
-
 .show-rate strong {
   color: #000;
   font-weight: 600;
 }
-
 /* Title styling */
 .show-title {
   font-size: 20px;
@@ -200,20 +174,17 @@ a {
   margin-bottom: 20px;
   /* text-align: center; */
 }
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .show-content {
     flex-direction: column;
     align-items: center;
   }
-
   .summary {
     width: 100%;
     margin-left: 0;
     text-align: center;
   }
-
   .show-content img {
     max-width: 100%;
   }

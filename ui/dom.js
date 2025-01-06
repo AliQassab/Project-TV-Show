@@ -58,5 +58,19 @@ export const htmlElements = (shows) => {
   episodesContainer.className = "episodes-container";
   section2.appendChild(episodesContainer);
 
+  // Create and add a Back button for navigating back to the show list
+  const backButton = document.createElement("button");
+  backButton.id = "back-button";
+  backButton.textContent = "Back to Shows";
+  backButton.style.display = "none"; // Hide the button initially
+  backButton.addEventListener("click", () => {
+    // Show the shows container and hide the episodes container
+  episodesContainer.style.display = "none";
+  showsContainer.style.display = "block";
+  backButton.style.display = "none"; // Hide the back button when in show list view
+  });
+
+  header.appendChild(backButton);
+
   rootElem.appendChild(main);
 };
