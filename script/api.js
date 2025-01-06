@@ -30,7 +30,7 @@ export const fetchShows = async () => {
       }
         const shows = await res.json();
       
-      
+        cache.set("shows", shows); // Save shows in cache for future use
         return shows.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
     } catch (error) {
       console.error("Error fetching shows:", error);

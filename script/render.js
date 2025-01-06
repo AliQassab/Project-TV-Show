@@ -65,6 +65,17 @@ export function renderEpisodes(episodeList) {
   const loadEpisodesForShow = async (showId) => {
     const allEpisodes = await fetchEpisodes(showId);
     renderEpisodes(allEpisodes);
-    document.querySelector(".episodes-container").style.display = "grid";
-    document.getElementById("shows-container").style.display = "none";
+
+    const episodesContainer = document.querySelector(".episodes-container");
+    const showsContainer = document.getElementById("shows-container");
+    const backButton = document.getElementById("back-button");
+
+    episodesContainer.style.display = "grid"; // Show episodes view
+    showsContainer.style.display = "none"; // Hide the shows list
+
+  // Show the back button
+    backButton.style.display = "inline-block"; // Show back button
+
+    // document.querySelector(".episodes-container").style.display = "grid";
+    // document.getElementById("shows-container").style.display = "none";
   } 
