@@ -16,8 +16,13 @@ export const htmlElements = (shows) => {
   // Create and append the dropdown inside section1
   const showSelector = document.createElement("select");
   showSelector.id = "show-selector";
+  showSelector.setAttribute("aria-label", "Choose a show");
   section1.appendChild(showSelector);
 
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.textContent = "Select a show";
+  showSelector.appendChild(defaultOption);
   // Populate dropdown with shows
   shows.forEach((show) => {
     const option = document.createElement("option");
@@ -25,7 +30,10 @@ export const htmlElements = (shows) => {
     option.textContent = show.name;
     showSelector.appendChild(option);
   });
-
+  const backToShows = document.createElement("a");
+  backToShows.textContent = "Back to Shows";
+  backToShows.id = "back-to-shows-button";
+  section1.appendChild(backToShows);
   // Add search results div
   const searchResults = document.createElement("div");
   searchResults.className = "search-results";
@@ -35,7 +43,7 @@ export const htmlElements = (shows) => {
   const section2 = document.createElement("section");
   main.appendChild(section2);
 
-
+  //shows-container
   const showsContainer = document.createElement("div");
   showsContainer.id = "shows-container";
   section2.appendChild(showsContainer);
