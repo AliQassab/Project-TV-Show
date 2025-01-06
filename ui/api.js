@@ -36,14 +36,5 @@ export const fetchShows = async () => {
        return [];
 
     }
-    const shows = await res.json();
-
-    // Sort shows alphabetically, case-insensitively
-    return shows.sort((a, b) =>
-      a.name.toLowerCase().localeCompare(b.name.toLowerCase())
-    );
-  } catch (error) {
-    console.error("Error fetching shows:", error);
-    return [];
-  }
+    
 };
