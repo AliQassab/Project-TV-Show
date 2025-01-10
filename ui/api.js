@@ -26,6 +26,7 @@ export const fetchShows = async () => {
     if (!res.ok) {
       throw new Error(`Failed to fetch data: ${res.status}`);
     }
+
     const shows = await res.json();
 
     cache.set("shows", shows); // Save shows in cache for future use
@@ -36,4 +37,5 @@ export const fetchShows = async () => {
     console.error("Error fetching shows:", error);
     return [];
   }
+
 };
