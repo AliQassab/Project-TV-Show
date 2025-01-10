@@ -12,8 +12,8 @@ export const filterAndRender = (
     const itemSummary = item.summary.toLowerCase();
     const search = searchTerm.toLowerCase().trim();
 
-    // Single regex pattern for all cases
-    const pattern = new RegExp(`\\b${search}\\b`);
+    // Remove word boundaries to allow partial matches
+    const pattern = new RegExp(search);
     return pattern.test(itemName) || pattern.test(itemSummary);
   });
 
